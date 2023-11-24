@@ -6,10 +6,10 @@ use paho_mqtt::{AsyncClient, AsyncReceiver, CreateOptionsBuilder, ConnectOptions
 
 mod cli_args;
 
-use a_3::log;
-use a_3::write_log;
-use a_3::log::set_tag;
-use a_3::publisher::Publisher;
+use mqtt_playground::log;
+use mqtt_playground::write_log;
+use mqtt_playground::log::set_tag;
+use mqtt_playground::publisher::Publisher;
 use cli_args::CLI_ARGS;
 
 fn main() {

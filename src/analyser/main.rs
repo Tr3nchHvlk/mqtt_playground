@@ -7,9 +7,9 @@ use tokio::{runtime::{Runtime, Builder}, spawn, sync::Mutex};
 
 mod cli_args;
 
-use a_3::log::{self, set_tag};
-use a_3::write_log;
-use a_3::subscriber::{Subscriber, SYS_subscriber};
+use mqtt_playground::log::{self, set_tag};
+use mqtt_playground::write_log;
+use mqtt_playground::subscriber::{Subscriber, SysSubscriber};
 use cli_args::CLI_ARGS;
 
 fn main() {
@@ -43,7 +43,7 @@ fn main() {
             .finalize()
         ).await.unwrap();
 
-        // let mut sys_subscriber = SYS_subscriber::connect(&host_uri, None).await.unwrap();
+        // let mut sys_subscriber = SysSubscriber::connect(&host_uri, None).await.unwrap();
 
         // let sys_subscriber_handle = main_rt.spawn(async move {
         //     sys_subscriber.start().await;
