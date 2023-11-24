@@ -1,0 +1,23 @@
+[package]
+name = "mqtt_playground"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+futures = "0.3.28"
+clap = { version = "4.2.7", features = ["derive"] }
+chrono = { version = "0.4.24", features = ["serde"] }
+tokio = { version = "1.28.0", features = ["full", "rt", "macros"] }
+paho-mqtt = { version = "0.12.1", features = ["bundled"], default-features = false }
+lazy_static = "1.4.0"
+path-clean = "1.0.1"
+
+[[bin]]
+name = "controller"
+path = "src/controller/main.rs"
+
+[[bin]]
+name = "analyser"
+path = "src/analyser/main.rs"
